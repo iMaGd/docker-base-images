@@ -3,7 +3,7 @@
 **Custom Docker images**, optimized for high-performance development and production across multiple programming languages and frameworks.
 
 📦 **Available on Docker Hub**:
-👉 [Docker Hub](https://hub.docker.com/repository/docker/depicter/)
+👉 [Docker Hub](https://hub.docker.com/u/depicter/)
 
 ---
 
