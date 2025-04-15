@@ -1,5 +1,9 @@
-docker build -t depicter/php:8.4-fpm-alpine --squash --platform linux/amd64 ./fpm-alpine
-docker push depicter/php:8.4-fpm-alpine
+#!/bin/bash
 
-docker build -t depicter/php:8.4-fpm-alpine --squash --platform linux/arm64 ./fpm-alpine
-docker push depicter/php:8.4-fpm-alpine
+# Local test
+# docker build -t depicter/php:8.4-fpm-alpine --squash --platform linux/arm64 ./fpm-alpine
+
+docker buildx create --name builderx --use
+docker buildx inspect builderx --bootstrap
+
+docker buildx build --platform linux/amd64,linux/arm64 -t depicter/php:8.4-fpm-alpine --push ./fpm-alpine
